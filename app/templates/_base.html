@@ -1,0 +1,22 @@
+{% extends 'bootstrap/base.html' %}
+
+{% block title %}
+    {{ title|default('navigation',true) }}
+{% endblock %}
+
+{% block styles %}
+    <link rel="shortcut icon" href="{{ url_for('static', filename = 'favicon.ico') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/style.css') }}">
+    {{ super() }}
+{% endblock %}
+
+
+<!-- 内容版块 -->
+{% block navbar %}
+    {% include '_navbar.html' %}
+    {% include '_flash.html' %}
+{% endblock %}
+
+{% block content %}
+
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends '_base.html' %}
+
+{% block title %}
+    首页
+{% endblock %}
+
+{% block content %}
+
+    <div style="width: 800px;margin: auto;">
+        <table class="table table-bordered">
+            {% for bookmark in bookmarks|slice(80) %}
+                <tr>
+                    {% for foo in bookmark %}
+                        <td>
+                            <img src="{{ foo.icon }}">
+                            <a href="{{ foo.url }}" target="_blank">{{ foo.name }} </a>
+                        </td>
+                    {% endfor %}
+                </tr>
+            {% endfor %}
+
+            {#        <tr>#}
+            {#            <td></td>#}
+            {#        </tr>#}
+        </table>
+
+    </div>
+
+{% endblock %}
